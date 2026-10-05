@@ -39,3 +39,24 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Supabase CLI local state (project ref, org id, pooler hostname) — found
+# missing by a Fable 5 review before this repo's first real commit; without
+# this, a routine `git add -A` would have swept it into version control.
+# Covers both locations: backend/supabase is the real linked project, and
+# a stray root-level supabase/.temp/ gets created too if the CLI is ever
+# run from the repo root instead of backend/ (happened during a 2026-09-24
+# debugging session).
+backend/supabase/.temp/
+backend/supabase/.branches/
+/supabase/.temp/
+/supabase/.branches/
+
+# Python
+__pycache__/
+*.pyc
+
+# Scraper output -- scraped fighter data, not source, and not something
+# that belongs in a public repo (real names/gyms pulled from third-party
+# sites, plus timestamped backups of the same).
+backend/scraper/output/

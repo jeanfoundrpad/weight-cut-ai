@@ -1,0 +1,41 @@
+project_id = "weight-cut-ai"
+
+[api]
+enabled = true
+port = 54321
+
+[db]
+port = 54322
+
+[auth]
+enabled = true
+enable_signup = true
+# Allow-lists the custom app-scheme URL the password-reset email link
+# redirects to after Supabase verifies the token server-side — without this,
+# a redirectTo outside site_url is silently ignored and falls back to the
+# broken localhost default. Wildcarding the path since expo-router may add
+# query params of its own.
+additional_redirect_urls = ["weightcutai://reset-password*"]
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+
+# Tried a code-based reset (supabase.auth.verifyOtp) instead of this link
+# flow first, since it needs no deep-link handling at all — blocked because
+# free-tier projects on Supabase's default email provider can't customize
+# the recovery template to surface {{ .Token }}, only the built-in
+# {{ .ConfirmationURL }} link. Revisit code-based reset if this project ever
+# moves to a paid plan or custom SMTP.
+
+[functions.revenuecat-webhook]
+verify_jwt = false
+
+[functions.analyze-photo]
+verify_jwt = false
+
+[functions.delete-account]
+verify_jwt = false
+
+[functions.coach-insight]
+verify_jwt = false

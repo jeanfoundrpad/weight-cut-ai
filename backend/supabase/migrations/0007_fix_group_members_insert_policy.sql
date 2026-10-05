@@ -1,0 +1,15 @@
+-- Found by a Fable 5 security review (2026-08-10): the direct-insert policy
+-- on group_members only ever checked `auth.uid() = user_id` — it never
+-- verified the caller actually went through join_group_by_code() and knows
+-- the invite code. Any authenticated user who learns a group_id (e.g. any
+-- current member can see it via myGroups()) could call
+-- `supabase.from('group_members').insert(...)` directly and join without
+-- the code, then read that group's progress_snapshots — silently
+-- contradicting this table's own "invite-only, never browsable" design.
+--
+-- Same fix as 0004_fix_create_group.sql applied to `groups`: drop the
+-- direct-insert policy entirely. join_group_by_code() and create_group()
+-- are both `security definer`, so they bypass RLS and are unaffected —
+-- this only removes the client's ability to insert a membership row any
+-- other way.
+drop policy if exists "users can add themselves to a group they're joining" on group_members;

@@ -1,21 +1,24 @@
-The MIT License (MIT)
+Weight Cut AI
+Copyright (c) 2026 Jean Saint-Felix. All rights reserved.
 
-Copyright (c) 2015-present 650 Industries, Inc. (aka Expo)
+This software and associated source code are proprietary and confidential.
+No part of this repository may be copied, modified, distributed, sublicensed,
+or used to create derivative works without the prior written permission of
+the copyright holder.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This project is an independent, original implementation. It is not derived
+from, and does not incorporate any source code from, any AGPL-licensed or
+otherwise separately-licensed third-party application, including but not
+limited to the "nut-ai" project. Any architectural or conceptual similarity
+to other calorie-tracking applications reflects independent implementation
+of common, unprotectable ideas and standard nutritional-science formulas
+(e.g. the Mifflin-St Jeor BMR equation), not copied expression.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Third-party dependencies (Expo, React Native, and other open-source
+libraries used by this project) remain governed by their own respective
+licenses; see each package's own LICENSE file in node_modules.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+The bundled nutrition database, where present, is built exclusively from
+USDA FoodData Central data released under CC0 1.0 (public domain) — see
+DATA-SOURCES.md for full attribution. CC0 carries no share-alike or
+copyleft obligation, so the compiled database itself may be kept private.
